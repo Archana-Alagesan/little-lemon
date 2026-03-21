@@ -1,0 +1,33 @@
+/* Base section — all share this */
+.section {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  width: 100%;
+  padding: 40px 0;
+  position: relative;
+  overflow: visible;
+}
+
+/* Content always in middle 8 cols */
+.section-content {
+  grid-column: var(--content-start-l) / var(--content-end-l);
+  gap: 24px;
+  align-items: center;
+  position: relative;
+  overflow: visible;
+}
+
+/* Tablet — 10 of 12 cols */
+@media (max-width: 1024px) {
+  .section-content {
+    grid-column: var(--content-start-m) / var(--content-end-m);
+  }
+}
+
+/* Mobile — full width with padding */
+@media (max-width: 768px) {
+  .section-content {
+    grid-column: var(--content-start-s) / var(--content-end-s);
+    padding: 0 16px;
+  }
+}

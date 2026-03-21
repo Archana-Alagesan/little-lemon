@@ -1,0 +1,48 @@
+/* Chicago Component Styles */
+.chicago .section-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.chicago h1, .chicago h2 {
+    margin: 0;
+    line-height: 2rem;
+}
+
+.chicago .image-container img {
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    object-position: center;
+    width: 50%;
+    position: relative;
+    border-radius: var(--border-radius);
+}
+
+.owner-photo-a {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 50px;
+}
+
+.owner-photo-b {
+    z-index: 1;
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .chicago .section-content {
+        grid-template-columns: 1fr;
+    }
+
+    .owner-photo-a {
+        left: 25px;
+    }
+
+    .owner-photo-b {
+        left: -25px;
+    }
+}

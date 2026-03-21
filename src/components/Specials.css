@@ -1,0 +1,81 @@
+/* Specials Component Styles */
+.specials {
+    margin-top: 150px;
+}
+
+.specials-header {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.specials-cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.specials-card-info {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    align-items: center;
+    padding: 20px;
+}
+
+.specials-card-info h3 {
+    margin: 0;
+    justify-self: start;
+}
+
+.specials-card-info .specials-card-price {
+    justify-self: end;
+}
+
+.specials-card-description,
+.specials-card-order {
+    text-align: start;
+    padding: 0 20px;
+}
+
+.specials-card-icon {
+    vertical-align: middle;
+}
+
+.specials-card img {
+    width: 100%;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    object-fit: cover;
+    object-position: center;
+    aspect-ratio: 4 / 3;
+}
+
+.specials-card.card {
+    padding: 0;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .specials-cards-container {
+        grid-template-columns: 1fr;
+    }
+
+    .specials {
+        margin: 0;
+        padding: 0;
+    }
+
+    .specials-header button {
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .specials-card img {
+        aspect-ratio: 16 / 9;
+    }
+
+}

@@ -65,7 +65,7 @@
         grid-area: a;
         justify-self: start;
     }
-    .footer-col.nav {
+    .footer-col.footer-nav {
         grid-area: b;
     }
     .footer-col.contact {

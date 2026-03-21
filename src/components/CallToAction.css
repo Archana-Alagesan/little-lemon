@@ -1,0 +1,67 @@
+/* Call To Action Component Styles */
+.cta {
+    background: #495e57;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: #fff;
+}
+
+.cta-info-container {
+    display: grid;
+    grid-template-columns: 4fr 4fr;
+    align-items: start;
+}
+
+.cta-content {
+    text-align: start;
+}
+
+.cta-content h1 {
+    color: var(--color-primary-2);
+    font-size: var(--text-display);
+    margin: 0;
+    line-height: 2.75rem;
+}
+
+.cta-content h2 {
+    margin: 0;
+}
+
+.cta-content p {
+    max-width: 300px;
+}
+
+.cta-image {
+    position: relative;
+    overflow: visible;
+    align-self: center;
+}
+
+.cta-image img {
+    position: absolute;
+    top: -120px;
+    right: 0;
+    width: 100%;
+    object-fit: contain;
+    z-index: 10;
+    border-radius: var(--border-radius);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
+}
+
+.cta-button {
+    justify-self: left;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .cta-content h1 {
+        line-height: 1.5rem;
+    }
+    .cta-image img {
+        position: relative;
+        top: 0;
+        width: 80%;
+    }
+}

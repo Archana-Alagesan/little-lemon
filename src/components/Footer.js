@@ -1,8 +1,7 @@
-import React from 'react';
 import footerLogo from '../assets/images/footer_logo.png';
 import './Footer.css';
 
-function Footer() {
+const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-inner">
@@ -10,7 +9,7 @@ function Footer() {
           <img src={footerLogo} alt="Little Lemon Logo" className="footer-logo" />
         </div>
 
-        <div className="footer-col nav">
+        <div className="footer-col footer-nav">
           <nav className="vertical-nav" aria-label="Footer navigation">
             <ul>
               <li><a href="#home">Home</a></li>

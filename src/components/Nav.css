@@ -58,7 +58,7 @@ nav a:hover::after {
 
 .vertical-nav a:hover {
   color: #F4CE14;
-  padding-left: 0.5rem;
+  /* padding-left: 0.5rem; */
 }
 
 @media (max-width: 768px) {
@@ -70,5 +70,10 @@ nav a:hover::after {
 
   nav a {
     font-size: 0.9rem;
+  }
+
+  /* Only hides when hideOnMobile prop is passed */
+  .nav--hide-mobile {
+    display: none;
   }
 }
