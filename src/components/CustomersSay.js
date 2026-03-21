@@ -37,7 +37,7 @@ const CustomersSay = () => {
                 {testimonials.map(testimonial => (
                     <Card key={testimonial.id} className="testimonial">
                         <div className='rating-container'>
-                            <p>{Array.from({ length: testimonial.rating }, (_, i) => <span key={i} className="rating-stars material-icons">star</span>)}</p>
+                            <p>{Array.from({ length: testimonial.rating }, (_, i) => <i className="fa-solid fa-star rating-stars" key={i}></i>)}</p>
                             <p className="rating">Rating: {testimonial.rating} / 5</p>
                         </div>
                         <div className='testimonial-author'>

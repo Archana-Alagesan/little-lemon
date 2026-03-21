@@ -8,6 +8,7 @@
     grid-auto-flow: column;
     align-items: center;
     justify-content: space-between;
+    padding-bottom: 30px;
 }
 
 .specials-cards-container {
@@ -66,6 +67,10 @@
     .specials {
         margin: 0;
         padding: 0;
+    }
+
+    .specials-header {
+        padding-top: 30px;
     }
 
     .specials-header button {

@@ -1,0 +1,62 @@
+.booking-form-container {
+    /* background-color: var(--color-primary-2); */
+    text-align: left;
+}
+
+.booking-form-container:hover {
+    transform: none;
+}
+
+form.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 100%;
+}
+
+/* Date input calendar icon */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+input[type="date"] {
+  position: relative;
+  padding-right: 40px;
+}
+
+/* Select caret */
+.select-wrap {
+  position: relative;
+}
+
+.select-wrap select {
+  padding-right: 40px;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.select-wrap::after {
+  content: '▾';
+  position: absolute;
+  right: 12px;           /* ← same as date icon right value */
+  top: 50%;              /* ← same as date icon top value */
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #94A3B8;
+  font-size: 14px;
+}
+
+.reserve-btn {
+    align-self: flex-end;
+    margin-top: auto;
+    width: 100%;
+}
+
+#notes {
+    resize: vertical;
+}

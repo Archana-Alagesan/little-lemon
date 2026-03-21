@@ -1,149 +1,93 @@
 /* Booking Page Component Styles */
 .booking-page {
-  width: 100%;
+    background-color: var(--color-primary-1);
+    padding-top: 20px;
 }
 
-.booking-header {
-  background: linear-gradient(135deg, #f4d03f 0%, #f39c12 100%);
-  padding: 3rem 2rem;
-  text-align: center;
-  color: white;
+.booking-intro {
+    text-align: center;
 }
 
-.booking-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+.booking-intro h1 {
+    margin: 0;
+    color: var(--color-primary-2);
 }
 
-.booking-header p {
-  font-size: 1.2rem;
-  opacity: 0.95;
+.booking-intro p {
+    margin: 0;
+    /* color: var(--color-highlight-2); */
+    color: var(--color-highlight-1);
 }
 
-.booking-container {
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 2rem;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 2rem;
-  margin-bottom: 3rem;
+.booking-content {
+    display: grid;
+    grid-template-columns: 4fr 3fr;
+    align-items: stretch;
+    margin-top: 30px;
+    gap: 40px;
 }
 
-.booking-form {
-  background: white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.hours-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
 }
 
-.form-group {
-  margin-bottom: 1.5rem;
+.day {
+    font-weight: var(--weight-semibold);
+    color: #1c2b3a;
 }
 
-.form-group label {
-  display: block;
-  font-weight: 600;
-  color: #1a1a1a;
-  margin-bottom: 0.5rem;
+.time {
+    color: #4a5568;
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 1rem;
-  font-family: inherit;
-  transition: border-color 0.3s ease;
+.booking-page h3 {
+    margin: 0;
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: #f4d03f;
-  box-shadow: 0 0 5px rgba(244, 208, 63, 0.3);
+.reservation-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.form-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+.card.open-hours-card:hover,
+.card.reservation-policy-card:hover,
+.card.contact-info-card:hover {
+    transform: none;
 }
 
-.submit-btn {
-  background-color: #27AE60;
-  color: white;
-  border: none;
-  padding: 1rem 2rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 100%;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+.reservation-policy,
+.open-hours-card {
+    text-align: left;
 }
 
-.submit-btn:hover {
-  background-color: #229954;
-  transform: translateY(-2px);
+.reservation-policy ol {
+    padding-left: 15px;
+    margin: 0;
 }
 
-.booking-info {
-  background: #f8f8f8;
-  padding: 2rem;
-  border-radius: 8px;
-  height: fit-content;
+.reservation-policy ol p {
+    margin: 0 0 0.5rem 0;
+    font-size: var(--text-body);
 }
 
-.booking-info h2 {
-  font-size: 1.5rem;
-  color: #1a1a1a;
-  margin-bottom: 1.5rem;
+.card.contact-info-card {
+    margin-top: 50px;
 }
 
-.info-item {
-  margin-bottom: 1.5rem;
-}
-
-.info-item h3 {
-  font-size: 1rem;
-  color: #1a1a1a;
-  margin-bottom: 0.5rem;
-}
-
-.info-item p {
-  color: #555;
-  margin: 0.25rem 0;
-}
-
+/* Mobile Styles */
 @media (max-width: 768px) {
-  .booking-header {
-    padding: 2rem 1rem;
-  }
+    .booking-content {
+        grid-template-columns: 1fr;
+    }
 
-  .booking-header h1 {
-    font-size: 1.8rem;
-  }
+    .reservation-info-container {
+        gap: 40px;
+    }
 
-  .booking-header p {
-    font-size: 1rem;
-  }
-
-  .booking-container {
-    grid-template-columns: 1fr;
-    padding: 0 1rem;
-  }
-
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-
-  .booking-form,
-  .booking-info {
-    padding: 1.5rem;
-  }
+    .card.contact-info-card {
+        margin-top: 40px;
+    }
 }

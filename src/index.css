@@ -1,5 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&family=Karla:wght@300;400;500;600;700&display=swap");
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+input,
+select,
+textarea {
+    appearance: none;
+    -webkit-appearance: none;
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+
 :root {
     /* Define CSS variables for grid layout */
     --content-start-l: 3;
@@ -13,7 +35,7 @@
     --color-primary-1: #495e57;
     --color-primary-2: #f4ce14;
     --color-secondary-1: #ee9972;
-    --color-background: #fbdabb;
+    --color-secondary-2: #fbdabb;
     --color-highlight-1: #edefee;
     --color-highlight-2: #333333;
 
@@ -154,8 +176,8 @@ p {
 }
 
 .btn-secondary {
-    background-color: var(--color-secondary-2);
-    color: var(--color-highlight-2);
+    background-color: var(--color-highlight-2);
+    color: var(--color-highlight-1);
 }
 
 .btn:hover {
@@ -196,4 +218,33 @@ nav a {
     font-size: var(--text-xs);
     font-weight: var(--weight-regular);
     line-height: var(--leading-normal);
+}
+
+/* Your custom input styles */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #E2E8F0;
+  border-radius: var(--border-radius);
+  background: #fff;
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  color: #1C2B3A;
+  transition: border-color 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #1C2B3A;
+  outline: none;
+}
+
+input::placeholder,
+select::placeholder,
+textarea::placeholder {
+  color: #94A3B8;
+  font-weight: var(--weight-light);
 }

@@ -10,6 +10,7 @@
     display: grid;
     grid-template-columns: 4fr 4fr;
     align-items: start;
+    padding-bottom: 30px;
 }
 
 .cta-content {

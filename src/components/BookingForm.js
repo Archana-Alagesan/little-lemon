@@ -1,12 +1,21 @@
 import React from 'react';
 import './BookingForm.css';
-import { submitAPI } from '../helpers/api-helpers.js';
+import { submitAPI } from '../helpers/apiHelpers.js';
 import { useNavigate } from 'react-router-dom';
+import Card from './Card.js';
+import TimePicker from './TimePicker.js';
+import { ALL_TIMES } from '../helpers/constants.js';
+import { useFormik } from 'formik';
+import { bookingSchema } from '../helpers/validationSchema.js';
 
 const BookingForm = ({ availableTimes, dispatch }) => {
+    const today = new Date().toISOString().split('T')[0];
     const navigate = useNavigate();
     const [bookingData, setBookingData] = React.useState({
-        date: '',
+        fullName: '',
+        email: '',
+        phone: '',
+        date: today,
         time: '',
         guests: 1,
         occasion: ''
@@ -17,38 +26,105 @@ const BookingForm = ({ availableTimes, dispatch }) => {
         dispatch({ date: new Date(date) });
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Submit the booking data
-        console.log("Booking data submitted:", bookingData);
-        const result = submitAPI(bookingData);
-        if (result) {
-            // Navigate to the confirmation page or show a success message
-            console.log("Booking confirmed:", bookingData);
-            navigate('/confirmed', { state: { bookingData } });
+    const formik = useFormik({
+        initialValues: {
+            fullName: '',
+            email: '',
+            phone: '',
+            date: today,
+            time: '',
+            guests: 1,
+            occasion: 'No special occasion',
+            notes: '',
+        },
+        validationSchema: bookingSchema,
+        onSubmit: (values) => {
+            const result = submitAPI(values)
+            if (result) {
+                navigate('/booking-confirmation', { state: values })
+            }
         }
-    };
+    });
 
     return (
-        <form className="booking-form" style={{ display: "grid", maxWidth: "200px", gap: "20px" }} onSubmit={handleSubmit}>
-            <label htmlFor="res-date">Choose date</label>
-            <input type="date" id="res-date" value={bookingData.date} onChange={(e) => handleDateChange(e.target.value)} />
-            <label htmlFor="res-time">Choose time</label>
-            <select id="res-time" value={bookingData.time} onChange={(e) => setBookingData({ ...bookingData, time: e.target.value })}>
-                {availableTimes.map((time) => (
-                    <option key={time} value={time}>{time}</option>
-                ))}
-            </select>
-            <label htmlFor="guests">Number of guests</label>
-            <input type="number" placeholder="1" min="1" max="10" id="guests" value={bookingData.guests} onChange={(e) => setBookingData({ ...bookingData, guests: e.target.value })} />
-            <label htmlFor="occasion">Occasion</label>
-            <select id="occasion" value={bookingData.occasion} onChange={(e) => setBookingData({ ...bookingData, occasion: e.target.value })}>
-                <option>Birthday</option>
-                <option>Engagement</option>
-                <option>Anniversary</option>
-            </select>
-            <input type="submit" value="Make Your reservation" />
-        </form>
+        <Card className="booking-form-container">
+            <form className="booking-form" onSubmit={formik.handleSubmit}>
+                <div className='form-field'>
+                    <label htmlFor="fullname">Full Name</label>
+                    <input type="text" id="fullname" {...formik.getFieldProps('fullName')} />
+                    {formik.touched.fullName && formik.errors.fullName && (
+                        <span className="error-msg">{formik.errors.fullName}</span>
+                    )}
+                </div>
+                <div className='form-field'>
+                    <label htmlFor="email">Email</label>
+                    <input type="email" id="email" {...formik.getFieldProps('email')} />
+                    {formik.touched.email && formik.errors.email && (
+                        <span className="error-msg">{formik.errors.email}</span>
+                    )}
+                </div>
+                <div className='form-field'>
+                    <label htmlFor="phone">Phone</label>
+                    <input type="tel" id="phone" {...formik.getFieldProps('phone')} />
+                    {formik.touched.phone && formik.errors.phone && (
+                        <span className="error-msg">{formik.errors.phone}</span>
+                    )}
+                </div>
+                <div className='form-field'>
+                    <label htmlFor="res-date">Choose date</label>
+                    <input type="date" id="res-date" min={today} value={formik.values.date} onChange={(e) => {
+                        formik.handleChange(e);
+                        handleDateChange(e.target.value);
+                    }} />
+                    {formik.touched.date && formik.errors.date && (
+                        <span className="error-msg">{formik.errors.date}</span>
+                    )}
+                </div>
+                {/* Time Pills */}
+                {bookingData.date && (
+                    <div>
+                        <TimePicker
+                            allTimes={ALL_TIMES}
+                            availableTimes={availableTimes}
+                            value={formik.values.time}
+                            onChange={(time) => formik.setFieldValue('time', time)}
+                        />
+                        {formik.touched.time && formik.errors.time && (
+                            <span className="error-msg">{formik.errors.time}</span>
+                        )}
+                    </div>
+                )}
+                <div className='form-field'>
+                    <label htmlFor="guests">Number of guests</label>
+                    <input type="number" placeholder="1" min="1" max="10" id="guests" {...formik.getFieldProps('guests')} />
+                    {formik.touched.guests && formik.errors.guests && (
+                        <span className="error-msg">{formik.errors.guests}</span>
+                    )}
+                </div>
+                <div className='form-field'>
+                    <label htmlFor="occasion">Occasion</label>
+                    <div className="select-wrap">
+                        <select id="occasion" {...formik.getFieldProps('occasion')}>
+                            <option value="No special occasion">No special occasion</option>
+                            <option value="Birthday">Birthday</option>
+                            <option value="Anniversary">Anniversary</option>
+                            <option value="Date Night">Date Night</option>
+                            <option value="Business Meeting">Business Meeting</option>
+                            <option value="Family Gathering">Family Gathering</option>
+                            <option value="Engagement">Engagement</option>
+                        </select>
+                    </div>
+                    {formik.touched.occasion && formik.errors.occasion && (
+                        <span className="error-msg">{formik.errors.occasion}</span>
+                    )}
+                </div>
+                <div className='form-field'>
+                    <label htmlFor="notes">Special Requests/Notes</label>
+                    <textarea name='notes' id="notes" rows="5" {...formik.getFieldProps('notes')}></textarea>
+                </div>
+                <input className='btn btn-primary reserve-btn' disabled={!formik.isValid || !formik.dirty || formik.isSubmitting} type="submit" value="Make Your reservation" />
+            </form>
+        </Card>
     );
 }
 

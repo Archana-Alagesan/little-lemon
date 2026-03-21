@@ -1,0 +1,25 @@
+.confirmed-booking {
+    display: grid;
+    gap: 30px;
+    text-align: center;
+}
+
+.confirmed-booking h2 {
+    margin: 0;
+    color: var(--color-primary-2);
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.confirmation-info p {
+    font-family: var(--font-body);
+    font-size: var(--text-small);
+    font-weight: var(--weight-regular);
+    color: #94a3b8;
+    font-style: italic;
+    line-height: var(--leading-normal);
+}

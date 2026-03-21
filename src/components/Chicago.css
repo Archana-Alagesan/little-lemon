@@ -45,4 +45,8 @@
     .owner-photo-b {
         left: -25px;
     }
+
+    .image-container{
+        margin-top: 40px;
+    }
 }
