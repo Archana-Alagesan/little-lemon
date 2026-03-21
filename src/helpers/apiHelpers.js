@@ -7,6 +7,7 @@ const seededRandom = function (seed) {
     };
 }
 
+// Fetch available times from the API
 const fetchAPI = function(date) {
     let result = [];
     let random = seededRandom(date.getDate());
@@ -21,6 +22,8 @@ const fetchAPI = function(date) {
     }
     return result;
 };
+
+// Submit booking data
 const submitAPI = function(formData) {
     return true;
 };

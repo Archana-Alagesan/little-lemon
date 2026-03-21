@@ -6,8 +6,6 @@ const getTimesForDate = (date) => {
   const dayOfWeek = date.getDay();
   const hours = OPENING_HOURS[dayOfWeek];
 
-  // if (!hours) return [];
-
   // Last slot = 1 hour before closing
   const closeHour = parseInt(hours.close.split(':')[0]);
   const openHour = parseInt(hours.open.split(':')[0]);

@@ -14,6 +14,7 @@ const TimePicker = ({ availableTimes, allTimes, value, onChange, bookedTimes = [
         return false;
     }
 
+    // No available times
     if (availableTimes.length === 0 && !allBooked) {
         return (
             <div className="time-picker">

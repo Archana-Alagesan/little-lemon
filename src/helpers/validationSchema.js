@@ -1,6 +1,6 @@
-// validationSchema.js
 import * as Yup from 'yup'
 
+// Booking form validation schema
 const bookingSchema = Yup.object({
   fullName: Yup.string()
     .min(2, 'Name must be at least 2 characters')

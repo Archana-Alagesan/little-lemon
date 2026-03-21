@@ -1,4 +1,3 @@
-// constants.js
 const OPENING_HOURS = {
   0: { open: '11:00', close: '22:00' },  // Sunday  11AM - 10PM
   1: { open: '12:00', close: '22:00' },  // Monday  12PM - 10PM

@@ -22,6 +22,7 @@ const BookingForm = ({ availableTimes, dispatch }) => {
         occasion: ''
     });
 
+    // Handle date change
     const handleDateChange = (date) => {
         setBookingData({ ...bookingData, date });
         dispatch({ date: new Date(date) });
@@ -29,6 +30,7 @@ const BookingForm = ({ availableTimes, dispatch }) => {
 
     const bookedTimes = getBookedTimesForDate(bookingData.date);
 
+    // Formik setup
     const formik = useFormik({
         initialValues: {
             fullName: '',
