@@ -1,38 +1,169 @@
 /* Header Component Styles */
 header {
-  background-color: #ffffff;
-  padding: 1rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-self: center;
-  gap: 2rem;
+    background-color: #ffffff;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    gap: 2rem;
 }
 
 header img {
-  max-width: 150px;
-  height: auto;
-  object-fit: contain;
+    max-width: 150px;
+    height: auto;
+    object-fit: contain;
 }
 
 header nav {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
 }
 
-@media (max-width: 768px) {
-  header {
+/* ── Hamburger Button ── */
+.hamburger {
+    display: none;
     flex-direction: column;
-    padding: 1rem;
-    gap: 1rem;
-  }
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px;
+    /* z-index: 1001; */
+    position: relative;
+    background: none;
+    border: none;
+}
 
-  header img {
-    max-width: 120px;
-  }
+.hamburger-line {
+    width: 24px;
+    height: 2px;
+    background: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    display: block;
+}
 
-  header nav {
-    width: 100%;
-    justify-content: center;
-  }
+/* ── Overlay ── */
+.menu-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* ── Close Button ── */
+.menu-close {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #333;
+}
+
+/* ── Close Button ── */
+.menu-close {
+    display: none;
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+    header {
+        flex-direction: row;
+        padding: 1rem;
+        gap: 1rem;
+        width: 100%;
+        position: relative;
+    }
+
+    header img {
+        max-width: 120px;
+        margin: auto;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    header nav {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Show hamburger */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Show overlay when open */
+    .menu-overlay {
+        display: block;
+    }
+
+    .menu-overlay nav ul {
+        align-self: flex-start;
+    }
+
+    /* Override existing mobile nav styles */
+    header nav ul {
+        flex-wrap: nowrap; /* ← override existing wrap */
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        width: 100%;
+    }
+
+    header nav li {
+        width: 100%;
+    }
+
+    header nav a {
+        display: block;
+        font-size: 1rem; /* ← override existing 0.9rem */
+        padding: 14px 0;
+        border-bottom: 1px solid #f5f7fa;
+        width: 100%;
+    }
+
+    /* Slide from left */
+    header .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 280px;
+        height: 100vh;
+        background: #fff;
+        padding: 80px 32px 40px;
+        z-index: 1000;
+        box-shadow: 4px 0 24px rgba(0, 0, 0, 0.1);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    /* Slide in when open */
+    header .nav.nav--open {
+        transform: translateX(0);
+    }
+
+    /* Hide on mobile if prop passed */
+    header .nav--hide-mobile:not(.nav--open) {
+        display: none;
+    }
+
+    /* Show close button */
+    header .menu-close {
+        display: block;
+        position: absolute;
+        top: 20px;
+        left: 230px;
+        width: 30px;
+        font-size: 20px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        color: #333333;
+        z-index: 1001;
+    }
 }

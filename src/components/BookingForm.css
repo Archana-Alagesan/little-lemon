@@ -60,3 +60,14 @@ input[type="date"] {
 #notes {
     resize: vertical;
 }
+
+.input-error {
+  border-color: #E53E3E !important;
+}
+
+.error-msg {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: #E53E3E;
+  font-weight: var(--weight-medium);
+}

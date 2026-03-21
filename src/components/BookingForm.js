@@ -7,6 +7,7 @@ import TimePicker from './TimePicker.js';
 import { ALL_TIMES } from '../helpers/constants.js';
 import { useFormik } from 'formik';
 import { bookingSchema } from '../helpers/validationSchema.js';
+import { saveBookedTime, getBookedTimesForDate } from '../helpers/storageHelpers.js';
 
 const BookingForm = ({ availableTimes, dispatch }) => {
     const today = new Date().toISOString().split('T')[0];
@@ -26,6 +27,8 @@ const BookingForm = ({ availableTimes, dispatch }) => {
         dispatch({ date: new Date(date) });
     };
 
+    const bookedTimes = getBookedTimesForDate(bookingData.date);
+
     const formik = useFormik({
         initialValues: {
             fullName: '',
@@ -39,16 +42,17 @@ const BookingForm = ({ availableTimes, dispatch }) => {
         },
         validationSchema: bookingSchema,
         onSubmit: (values) => {
-            const result = submitAPI(values)
+            const result = submitAPI(values);
             if (result) {
-                navigate('/booking-confirmation', { state: values })
+                saveBookedTime(values.date, values.time);
+                navigate('/booking-confirmation', { state: values });
             }
         }
     });
 
     return (
         <Card className="booking-form-container">
-            <form className="booking-form" onSubmit={formik.handleSubmit}>
+            <form className="booking-form" aria-label="booking form" onSubmit={formik.handleSubmit}>
                 <div className='form-field'>
                     <label htmlFor="fullname">Full Name</label>
                     <input type="text" id="fullname" {...formik.getFieldProps('fullName')} />
@@ -76,9 +80,6 @@ const BookingForm = ({ availableTimes, dispatch }) => {
                         formik.handleChange(e);
                         handleDateChange(e.target.value);
                     }} />
-                    {formik.touched.date && formik.errors.date && (
-                        <span className="error-msg">{formik.errors.date}</span>
-                    )}
                 </div>
                 {/* Time Pills */}
                 {bookingData.date && (
@@ -86,6 +87,7 @@ const BookingForm = ({ availableTimes, dispatch }) => {
                         <TimePicker
                             allTimes={ALL_TIMES}
                             availableTimes={availableTimes}
+                            bookedTimes={bookedTimes}
                             value={formik.values.time}
                             onChange={(time) => formik.setFieldValue('time', time)}
                         />
@@ -97,9 +99,6 @@ const BookingForm = ({ availableTimes, dispatch }) => {
                 <div className='form-field'>
                     <label htmlFor="guests">Number of guests</label>
                     <input type="number" placeholder="1" min="1" max="10" id="guests" {...formik.getFieldProps('guests')} />
-                    {formik.touched.guests && formik.errors.guests && (
-                        <span className="error-msg">{formik.errors.guests}</span>
-                    )}
                 </div>
                 <div className='form-field'>
                     <label htmlFor="occasion">Occasion</label>
@@ -114,9 +113,6 @@ const BookingForm = ({ availableTimes, dispatch }) => {
                             <option value="Engagement">Engagement</option>
                         </select>
                     </div>
-                    {formik.touched.occasion && formik.errors.occasion && (
-                        <span className="error-msg">{formik.errors.occasion}</span>
-                    )}
                 </div>
                 <div className='form-field'>
                     <label htmlFor="notes">Special Requests/Notes</label>

@@ -9,6 +9,10 @@
     line-height: 2rem;
 }
 
+.chicago h2 {
+    margin-bottom: 1rem;
+}
+
 .chicago .image-container img {
     aspect-ratio: 3/4;
     object-fit: cover;

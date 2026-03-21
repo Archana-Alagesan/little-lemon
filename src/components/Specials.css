@@ -21,7 +21,7 @@
     display: grid;
     grid-template-columns: 4fr 1fr;
     align-items: center;
-    padding: 20px;
+    padding: 15px;
 }
 
 .specials-card-info h3 {
@@ -36,7 +36,7 @@
 .specials-card-description,
 .specials-card-order {
     text-align: start;
-    padding: 0 20px;
+    padding: 0 15px 15px;
 }
 
 .specials-card-icon {
