@@ -1,0 +1,74 @@
+/* Navigation Component Styles */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+nav li {
+  margin: 0;
+}
+
+nav a {
+  color: #333;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #F4CE14;
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #F4CE14;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Vertical navigation (for footer) */
+.vertical-nav ul {
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.vertical-nav a {
+  padding-left: 0;
+}
+
+.vertical-nav a::after {
+  display: none;
+}
+
+.vertical-nav a:hover {
+  color: #F4CE14;
+  padding-left: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+  }
+}
