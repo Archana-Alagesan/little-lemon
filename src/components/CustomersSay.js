@@ -41,7 +41,7 @@ const CustomersSay = () => {
                             <p className="rating">Rating: {testimonial.rating} / 5</p>
                         </div>
                         <div className='testimonial-author'>
-                            <img className='testimonial-author-image' src={require(`../assets/images/${testimonial.author}.png`)} alt={testimonial.author} />
+                            <img className='testimonial-author-image' src={require(`../assets/images/${testimonial.author.toLocaleLowerCase().replace(/ /g, '-')}.png`)} alt={testimonial.author} />
                             <span>{testimonial.author}</span>
                         </div>
                         <div className='testimonial-text'>

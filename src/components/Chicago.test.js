@@ -4,8 +4,8 @@ import Chicago from './Chicago';
 
 // ── Mocks ──────────────────────────────────────────────
 
-jest.mock('../assets/images/Mario and Adrian A.jpg', () => 'Mario and Adrian A.jpg');
-jest.mock('../assets/images/Mario and Adrian B.jpg', () => 'Mario and Adrian B.jpg');
+jest.mock('../assets/images/mario-and-adrian-a.jpg', () => 'mario-and-adrian-a.jpg');
+jest.mock('../assets/images/mario-and-adrian-b.jpg', () => 'mario-and-adrian-b.jpg');
 
 // ── Tests ──────────────────────────────────────────────
 
@@ -57,13 +57,13 @@ describe('Chicago', () => {
         test('renders photo a with correct src', () => {
             const { container } = render(<Chicago />);
             expect(container.querySelector('.owner-photo-a'))
-                .toHaveAttribute('src', 'Mario and Adrian A.jpg');
+                .toHaveAttribute('src', 'mario-and-adrian-a.jpg');
         });
 
         test('renders photo b with correct src', () => {
             const { container } = render(<Chicago />);
             expect(container.querySelector('.owner-photo-b'))
-                .toHaveAttribute('src', 'Mario and Adrian B.jpg');
+                .toHaveAttribute('src', 'mario-and-adrian-b.jpg');
         });
 
     });

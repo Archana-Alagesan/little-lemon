@@ -5,7 +5,7 @@ import Header from './Header';
 
 // ── Mocks ──────────────────────────────────────────────
 
-jest.mock('../assets/images/Logo.svg', () => 'logo.svg');
+jest.mock('../assets/images/logo.svg', () => 'logo.svg');
 jest.mock('./Nav', () => () => null);
 
 // ── Helper ─────────────────────────────────────────────

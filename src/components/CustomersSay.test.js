@@ -4,10 +4,10 @@ import CustomersSay from './CustomersSay';
 
 // ── Mocks ──────────────────────────────────────────────
 
-jest.mock('../assets/images/John Doe.png', () => 'John Doe.png');
-jest.mock('../assets/images/Jane Smith.png', () => 'Jane Smith.png');
-jest.mock('../assets/images/Sam Wilson.png', () => 'Sam Wilson.png');
-jest.mock('../assets/images/Lisa Brown.png', () => 'Lisa Brown.png');
+jest.mock('../assets/images/john-doe.png', () => 'john-doe.png');
+jest.mock('../assets/images/jane-smith.png', () => 'jane-smith.png');
+jest.mock('../assets/images/sam-wilson.png', () => 'sam-wilson.png');
+jest.mock('../assets/images/lisa-brown.png', () => 'lisa-brown.png');
 
 // ── Tests ──────────────────────────────────────────────
 
@@ -99,13 +99,13 @@ describe('CustomersSay', () => {
         test('renders john doe image with correct src', () => {
             render(<CustomersSay />);
             expect(screen.getByAltText(/john doe/i))
-                .toHaveAttribute('src', 'John Doe.png');
+                .toHaveAttribute('src', 'john-doe.png');
         });
 
         test('renders jane smith image with correct src', () => {
             render(<CustomersSay />);
             expect(screen.getByAltText(/jane smith/i))
-                .toHaveAttribute('src', 'Jane Smith.png');
+                .toHaveAttribute('src', 'jane-smith.png');
         });
 
     });

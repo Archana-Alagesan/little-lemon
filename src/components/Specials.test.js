@@ -4,9 +4,9 @@ import Specials from './Specials';
 
 // ── Mocks ──────────────────────────────────────────────
 
-jest.mock('../assets/images/greek_salad.jpg', () => 'greek_salad.jpg');
+jest.mock('../assets/images/greek-salad.jpg', () => 'greek-salad.jpg');
 jest.mock('../assets/images/bruschetta.svg', () => 'bruschetta.svg');
-jest.mock('../assets/images/lemon_dessert.jpg', () => 'lemon_dessert.jpg');
+jest.mock('../assets/images/lemon-dessert.jpg', () => 'lemon-dessert.jpg');
 
 // ── Tests ──────────────────────────────────────────────
 

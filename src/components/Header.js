@@ -1,4 +1,4 @@
-import logo from '../assets/images/Logo.svg';
+import logo from '../assets/images/logo.svg';
 import Nav from './Nav';
 import './Header.css';
 import { useState } from 'react';

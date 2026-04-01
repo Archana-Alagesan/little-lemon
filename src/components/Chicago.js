@@ -1,7 +1,7 @@
 import './Chicago.css';
 import Section from './Section';
-import photoA from '../assets/images/Mario and Adrian A.jpg';
-import photoB from '../assets/images/Mario and Adrian B.jpg';
+import photoA from '../assets/images/mario-and-adrian-a.jpg';
+import photoB from '../assets/images/mario-and-adrian-b.jpg';
 
 const Chicago = () => {
   return (

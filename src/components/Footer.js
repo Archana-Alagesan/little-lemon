@@ -1,4 +1,4 @@
-import footerLogo from '../assets/images/footer_logo.png';
+import footerLogo from '../assets/images/footer-logo.png';
 import './Footer.css';
 import Nav from './Nav';
 

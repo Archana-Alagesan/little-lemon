@@ -5,7 +5,7 @@ import Footer from './Footer';
 
 // ── Mocks ──────────────────────────────────────────────
 
-jest.mock('../assets/images/footer_logo.png', () => 'footer_logo.png');
+jest.mock('../assets/images/footer-logo.png', () => 'footer-logo.png');
 jest.mock('./Nav', () => () => null);
 
 // ── Helper ─────────────────────────────────────────────
@@ -52,7 +52,7 @@ describe('Footer', () => {
         test('renders logo with correct src', () => {
             renderFooter();
             expect(screen.getByAltText(/little lemon logo/i))
-                .toHaveAttribute('src', 'footer_logo.png');
+                .toHaveAttribute('src', 'footer-logo.png');
         });
 
     });
