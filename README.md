@@ -1,70 +1,114 @@
-# Getting Started with Create React App
+# 🍋 Little Lemon — Restaurant Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> **Live Demo:** 
 
-## Available Scripts
+A fully responsive restaurant web application built with **React** as the capstone project for the **Meta Front-End Developer Professional Certificate**. Little Lemon is a fictional Mediterranean restaurant where users can explore the menu and reserve a table online.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Screenshots
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+- **Home Page** — Hero section, promotions, and restaurant highlights
+- **Menu Page** — Categorised menu items with descriptions
+- **Table Reservation** — Interactive booking form with date, time, and guest selection
+- **Form Validation** — Real-time client-side validation with user-friendly error messages
+- **Fully Responsive** — Mobile-first design that works across all screen sizes
+- **Accessible** — Semantic HTML and ARIA attributes for screen reader support
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Tech Stack
 
-### `npm run eject`
+| Technology | Purpose |
+|---|---|
+| React 18 | Component-based UI |
+| React Router v6 | Client-side routing & navigation |
+| React Hooks | `useState`, `useEffect`, `useReducer` for state management |
+| CSS3 | Custom styling, Flexbox & Grid layouts |
+| JavaScript (ES6+) | Core application logic |
+| Create React App | Project scaffolding & build tooling |
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## What I Built & Learned
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This project demonstrates practical React skills applied to a real-world use case:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Component Architecture** — Broke down the UI into reusable, single-responsibility components (Header, Nav, BookingForm, MenuCard, Footer, etc.)
+- **State Management** — Used `useState` and `useReducer` to manage form state and available time slots
+- **React Router** — Implemented multi-page navigation with `<Link>`, `<Routes>`, and `<Route>`
+- **Controlled Components** — Built a fully controlled booking form with validation logic
+- **Responsive Design** — Applied CSS Flexbox and Grid for a mobile-first, adaptive layout
+- **Accessibility** — Added semantic HTML5 elements and ARIA labels to ensure screen reader compatibility
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Getting Started
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Prerequisites
+- Node.js v16+
+- npm or yarn
 
-### Code Splitting
+### Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+# Clone the repository
+git clone https://github.com/Archana-Alagesan/little-lemon.git
 
-### Analyzing the Bundle Size
+# Navigate into the project
+cd little-lemon
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Install dependencies
+npm install
 
-### Making a Progressive Web App
+# Start the development server
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Project Structure
 
-### Deployment
+```
+src/
+├── components/
+│   ├── Header/
+│   ├── Nav/
+│   ├── BookingForm/
+│   ├── MenuCard/
+│   └── Footer/
+├── pages/
+│   ├── Home.js
+│   ├── Menu.js
+│   └── Reservations.js
+├── App.js
+└── index.js
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## About This Project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This app was built as the **capstone project** for the [Meta Front-End Developer Professional Certificate](https://www.coursera.org/professional-certificates/meta-front-end-developer) on Coursera. It applies skills from the full specialisation including React, UX/UI principles, and responsive design.
+
+---
+
+## Author
+
+**Archana Alagesan** — Senior Front-End Developer  
+[GitHub](https://github.com/Archana-Alagesan) · [LinkedIn](https://www.linkedin.com/in/archana-alagesan/)
+
+---
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
