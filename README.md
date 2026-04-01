@@ -1,6 +1,6 @@
 # 🍋 Little Lemon — Restaurant Web App
 
-> **Live Demo:** 
+> **[Live Demo](https://little-lemon-f3aai7ob0-archana-alagesans-projects.vercel.app/)**
 
 A fully responsive restaurant web application built with **React** as the capstone project for the **Meta Front-End Developer Professional Certificate**. Little Lemon is a fictional Mediterranean restaurant where users can explore the menu and reserve a table online.
 
@@ -8,7 +8,7 @@ A fully responsive restaurant web application built with **React** as the capsto
 
 ## Screenshots
 
-
+<img width="1200" height="750" alt="image" src="https://github.com/user-attachments/assets/3f552dfb-ea4e-43c3-b315-24b8884266d7" />
 
 ---
 
@@ -22,7 +22,6 @@ A fully responsive restaurant web application built with **React** as the capsto
 - **Accessible** — Semantic HTML and ARIA attributes for screen reader support
 
 ---
-
 
 ## Tech Stack
 
